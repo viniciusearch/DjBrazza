@@ -171,7 +171,7 @@ html {
 }
 
 body {
-  background: #2e3842;
+  background: #191B1D;
   scroll-behavior: smooth;
 }
 
@@ -2054,7 +2054,7 @@ input[type='radio'] + label:before {
 
 input[type='checkbox']:checked + label:before,
 input[type='radio']:checked + label:before {
-  background: #2e3842;
+  background: #191B1D;
   color: #fff;
   content: '\f00c';
 }
@@ -3019,7 +3019,7 @@ button:disabled,
 }
 
 .wrapper.style1 .icon.major {
-  border-color: rgba(0, 0, 0, 0.125);
+  border-color:rgba(205, 206, 207, 0.04);
 }
 
 .wrapper.style1 ul.alt li {
@@ -3262,7 +3262,7 @@ button:disabled,
 
 .wrapper.style5 strong,
 .wrapper.style5 b {
-  color: #2e3842;
+  color: #191B1D;
 }
 
 .wrapper.style5 h2,
@@ -3270,7 +3270,7 @@ button:disabled,
 .wrapper.style5 h4,
 .wrapper.style5 h5,
 .wrapper.style5 h6 {
-  color: #2e3842;
+  color: #191B1D;
 }
 
 .wrapper.style5 hr {
@@ -3302,7 +3302,7 @@ button:disabled,
 }
 
 .wrapper.style5 label {
-  color: #2e3842;
+  color: #191B1D;
 }
 
 .wrapper.style5 input[type='text'],
@@ -3318,7 +3318,7 @@ button:disabled,
 }
 
 .wrapper.style5 select option {
-  color: #2e3842;
+  color: #191B1D;
   background: #ffffff;
 }
 
@@ -3334,7 +3334,7 @@ button:disabled,
 
 .wrapper.style5 input[type='checkbox']:checked + label:before,
 .wrapper.style5 input[type='radio']:checked + label:before {
-  background: #2e3842;
+  background: #191B1D;
   color: #ffffff;
 }
 
@@ -3375,7 +3375,7 @@ button:disabled,
 }
 
 .wrapper.style5 table th {
-  color: #2e3842;
+  color: #191B1D;
 }
 
 .wrapper.style5 table thead {
@@ -3396,7 +3396,7 @@ button:disabled,
 .wrapper.style5 button,
 .wrapper.style5 .button {
   box-shadow: inset 0 0 0 2px #dfdfdf;
-  color: #2e3842;
+  color: #191B1D;
 }
 
 .wrapper.style5 input[type='submit']:hover,
@@ -3827,7 +3827,7 @@ body.is-menu-visible #menu {
   -ms-transition-delay: 1.25s;
   transition-delay: 1.25s;
   content: '';
-  background: #2e3842;
+  background: #191B1D;
   display: block;
   width: 100%;
   height: 100%;
@@ -4100,6 +4100,7 @@ body.landing #page-wrapper {
     url('../../images/banner.jpg');
   background-attachment: fixed;
   background-position: center center;
+  background-position-y: 30%;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 0;
