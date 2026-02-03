@@ -263,6 +263,7 @@ i {
 
 p {
   margin: 0 0 2em 0;
+  color: #CDCECF;
 }
 
 h1,
@@ -2180,15 +2181,15 @@ input[type='radio'] + label:before {
 }
 
 .icon.style1 {
-  color: #00ffcc;
+  color: #CDCECF;
 }
 
 .icon.style2 {
-  color: #00f0ff;
+  color: #d60000;
 }
 
 .icon.style3 {
-  color: #76ddff;
+  color: #CDCECF;
 }
 
 /* Image */
@@ -2595,7 +2596,7 @@ input[type='reset'].primary,
 input[type='button'].primary,
 button.primary,
 .button.primary {
-  background-color: #ed4933;
+  background-color: #c80018;
   box-shadow: none !important;
   color: #ffffff !important;
 }
@@ -2605,7 +2606,7 @@ input[type='reset'].primary:hover,
 input[type='button'].primary:hover,
 button.primary:hover,
 .button.primary:hover {
-  background-color: #ef5e4a !important;
+  background-color: #c80017af !important;
 }
 
 input[type='submit'].primary:active,
@@ -2711,7 +2712,7 @@ button:disabled,
 
 .features li:before {
   display: block;
-  color: yellow;
+  color: #191B1D;
   position: absolute;
   left: 1.75em;
   top: 2.75em;
@@ -2732,6 +2733,11 @@ button:disabled,
 
 .features li:nth-last-child(2) {
   border-bottom-left-radius: 3px;
+}
+
+.features p{
+  color: #191B1D;
+
 }
 
 @media screen and (max-width: 980px) {
@@ -2910,8 +2916,8 @@ button:disabled,
 }
 
 .wrapper.style1 {
-  background-color: #171717;
-  color: #c8ece9;
+  background-color: #191B1D;
+  color: #CDCECF;
 }
 
 .wrapper.style1 strong,
@@ -2952,7 +2958,7 @@ button:disabled,
 }
 
 .wrapper.style1 header.major p {
-  color: #c8ece9;
+  color: #CDCECF;
 }
 
 .wrapper.style1 label {
@@ -3076,12 +3082,12 @@ button:disabled,
 }
 
 .wrapper.style2 {
-  background-color: #2e3842;
+  background-color: #191B1D;
 }
 
 .wrapper.style3 {
-  background-color: #505393;
-  color: #d3d4e4;
+  background-color: #CDCECF;
+  color: white;
 }
 
 .wrapper.style3 strong,
@@ -3122,7 +3128,7 @@ button:disabled,
 }
 
 .wrapper.style3 header.major p {
-  color: #d3d4e4;
+  color: #191B1D;
 }
 
 .wrapper.style3 label {
@@ -3551,7 +3557,7 @@ body.is-menu-visible #menu {
   -webkit-transition: background-color 0.2s ease;
   -ms-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
-  background: #2e3842;
+  background: #CDCECF;
   height: 3em;
   left: 0;
   line-height: 3em;
@@ -3578,6 +3584,11 @@ body.is-menu-visible #menu {
   display: block;
   height: inherit;
   line-height: inherit;
+  color: #191B1D;
+}
+
+#header span {
+  color: #191B1D;
 }
 
 @media screen and (max-width: 736px) {
@@ -3654,11 +3665,16 @@ body.is-menu-visible #menu {
 
 #header.alt {
   background: transparent;
+  color: white;
 }
 
 #header.alt h1 {
   pointer-events: none;
   opacity: 0;
+}
+
+#header.alt span {
+  color: white;
 }
 
 /* Banner */
@@ -4090,7 +4106,7 @@ body.landing #page-wrapper {
 }
 
 body.landing #footer {
-  background-color: rgba(29, 36, 42, 0.9);
+  background-color: rgba(25, 27, 29, 0.8);
 }
 
 body.is-mobile.landing #page-wrapper {
