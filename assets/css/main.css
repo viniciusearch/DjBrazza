@@ -2121,6 +2121,10 @@ input[type='radio'] + label:before {
   position: relative;
 }
 
+.icon.style4{
+  color: #e48523;
+}
+
 .icon:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -2596,7 +2600,8 @@ input[type='reset'].primary,
 input[type='button'].primary,
 button.primary,
 .button.primary {
-  background-color: #c80018;
+  border: solid 1px #e48523;
+  background-color: rgba(228, 133, 35, 0.5);
   box-shadow: none !important;
   color: #ffffff !important;
 }
@@ -2606,7 +2611,8 @@ input[type='reset'].primary:hover,
 input[type='button'].primary:hover,
 button.primary:hover,
 .button.primary:hover {
-  background-color: #c80017af !important;
+  background-color: #e48523;
+  border: none;
 }
 
 input[type='submit'].primary:active,
@@ -3725,7 +3731,7 @@ body.is-menu-visible #menu {
   z-index: 1;
 }
 
-#banner h2:before,
+/* #banner h2:before,
 #banner h2:after {
   -moz-transition: width 0.85s ease;
   -webkit-transition: width 0.85s ease;
@@ -3735,16 +3741,63 @@ body.is-menu-visible #menu {
   -webkit-transition-delay: 0.25s;
   -ms-transition-delay: 0.25s;
   transition-delay: 0.25s;
-  background: #fff;
+  background: #e48523;
   content: '';
   display: block;
   height: 2px;
   position: absolute;
   width: 100%;
+} */
+
+#banner h2:before,
+#banner h2:after {
+  -moz-transition: width 0.85s ease, box-shadow 0.85s ease;
+  -webkit-transition: width 0.85s ease, box-shadow 0.85s ease;
+  -ms-transition: width 0.85s ease, box-shadow 0.85s ease;
+  transition: width 0.85s ease, box-shadow 0.85s ease;
+  -moz-transition-delay: 0.25s;
+  -webkit-transition-delay: 0.25s;
+  -ms-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+  
+  background: #e48523; /* Laranja âmbar */
+  
+  /* Efeito neon - múltiplas sombras para glow intenso */
+  box-shadow: 
+    0 0 5px #e48523,
+    0 0 10px #e48523,
+    0 0 20px #e48523,
+    0 0 30px #ff9500,
+    0 0 40px #ff6b35;
+  
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  
+  /* Animação de pulsação sutil */
+  animation: neon-pulse 2s ease-in-out infinite alternate;
+}
+
+/* Animação de pulsação neon */
+@keyframes neon-pulse {
+  0% {
+    box-shadow: 
+      0 0 5px #e48523,
+      0 0 10px #e48523,
+      0 0 20px #e48523,
+  }
+  100% {
+    box-shadow: 
+      0 0 10px #e48523,
+      0 0 20px #e48523,
+      0 0 30px #ff9500,
+  }
 }
 
 #banner h2:before {
-  top: 0;
+  top: -12px;
   left: 0;
 }
 
@@ -4155,4 +4208,311 @@ body.is-mobile.landing .wrapper.style4 {
 
 body.is-mobile.landing #footer {
   background-color: #1d242a;
+}
+
+
+/* Reviews Section */
+.reviews-carousel {
+  margin: 40px 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+  padding: 20px 0;
+}
+
+.review-card {
+  background: rgba(30, 30, 30, 0.7);
+  border-radius: 12px;
+  padding: 25px;
+  border-left: 3px solid #e48523;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 350px;
+  flex-shrink: 0;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  background: rgba(35, 35, 35, 0.8);
+  box-shadow: 0 8px 25px rgba(228, 133, 35, 0.2);
+}
+
+.review-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #e48523, transparent);
+  animation: glow-slide 3s ease-in-out infinite;
+}
+
+@keyframes glow-slide {
+  0%, 100% { opacity: 0; transform: translateX(-100%); }
+  50% { opacity: 1; transform: translateX(100%); }
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.review-author {
+  font-weight: 600;
+  font-size: 1.05em;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.review-rating {
+  margin-left: auto;
+  color: #ffc107;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.review-text {
+  font-size: 0.95em;
+  line-height: 1.7;
+  color: #e0e0e0;
+  margin: 12px 0;
+  font-style: italic;
+}
+
+.review-date {
+  color: #888;
+  font-size: 0.85em;
+  text-align: right;
+  margin-top: 10px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+}
+
+/* Controles do Carrossel */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.carousel-btn {
+  background: rgba(228, 133, 35, 0.2);
+  border: 2px solid #e48523;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2em;
+}
+
+.carousel-btn:hover {
+  background: #e48523;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(228, 133, 35, 0.5);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(228, 133, 35, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #e48523;
+  border-color: #e48523;
+  transform: scale(1.2);
+}
+
+/* Footer pequeno */
+.reviews-footer {
+  text-align: center;
+  margin-top: 25px;
+  color: #aaa;
+  font-size: 0.95em;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reviews-footer strong {
+  color: #e48523;
+}
+
+/* Responsive Reviews */
+@media screen and (max-width: 1280px) {
+  .review-card {
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .review-card {
+    min-width: 280px;
+    padding: 20px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1em;
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .carousel-track {
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .review-card {
+    min-width: 260px;
+    padding: 18px;
+  }
+
+  .review-author {
+    font-size: 1em;
+  }
+
+  .review-text {
+    font-size: 0.9em;
+  }
+
+  .carousel-controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .carousel-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3em;
+  }
+}
+
+
+
+/* Efeito de brilho no botão */
+
+
+.button.primary:hover::before {
+  left: 100%;
+}
+
+.button.primary span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ajuste de tamanho do card de avaliações */
+.review-card {
+  background: rgba(30, 30, 30, 0.7);
+  border-radius: 12px;
+  padding: 18px; /* Reduzido de 25px para 18px */
+  border-left: 3px solid #e48523;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 45%; /* Reduzido de 350px para 280px */
+  flex-shrink: 0;
+  height: 300px; /* Altura fixa para uniformidade */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ajuste do texto dentro do card */
+.review-text {
+  font-size: 0.9em; /* Reduzido para melhor ajuste */
+  line-height: 1.5;
+  flex: 1; /* Faz o texto ocupar espaço restante */
+  margin: 10px 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limita para 3 linhas */
+  -webkit-box-orient: vertical;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px; /* Reduzido para economizar espaço */
+  padding-bottom: 8px; /* Reduzido para economizar espaço */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.review-author {
+  font-weight: 600;
+  font-size: 1em;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.review-rating {
+  margin-left: auto;
+  color: #ffc107;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.review-date {
+  color: #888;
+  font-size: 0.8em;
+  text-align: right;
+  margin-top: 8px;
+  font-style: normal;
+  letter-spacing: 0.01em;
+}
+
+/* Ajuste para mobile */
+@media screen and (max-width: 736px) {
+  .review-card {
+    min-width: 260px;
+    max-width: 260px;
+    height: 240px;
+    padding: 15px;
+  }
+  
+  .review-text {
+    -webkit-line-clamp: 4; /* 4 linhas no mobile */
+  }
 }
