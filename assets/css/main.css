@@ -4223,9 +4223,10 @@ body.is-mobile.landing #footer {
 
 
 .testimonials {
-    /* max-width: 1200px; 
-    margin: 4em auto; */
     padding: 5% 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* cabeçalho */
@@ -4256,6 +4257,7 @@ body.is-mobile.landing #footer {
 .testimonials-grid {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 2%;
 }
 
 .testimonial-card {
