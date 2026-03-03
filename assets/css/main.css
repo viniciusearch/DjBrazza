@@ -3742,24 +3742,6 @@ body.is-menu-visible #menu {
   z-index: 1;
 }
 
-/* #banner h2:before,
-#banner h2:after {
-  -moz-transition: width 0.85s ease;
-  -webkit-transition: width 0.85s ease;
-  -ms-transition: width 0.85s ease;
-  transition: width 0.85s ease;
-  -moz-transition-delay: 0.25s;
-  -webkit-transition-delay: 0.25s;
-  -ms-transition-delay: 0.25s;
-  transition-delay: 0.25s;
-  background: #e48523;
-  content: '';
-  display: block;
-  height: 2px;
-  position: absolute;
-  width: 100%;
-} */
-
 #banner h2:before,
 #banner h2:after {
   -moz-transition: width 0.85s ease, box-shadow 0.85s ease;
@@ -3909,7 +3891,7 @@ body.is-menu-visible #menu {
   }
 
   #banner h2 {
-    font-size: 1.25em;
+    font-size: 0.25em;
   }
 
   #banner br {
@@ -4353,4 +4335,150 @@ body.is-mobile.landing #footer {
 
 .testimonials{
   background-color: #171717;
+}
+
+
+/* --- TECH DRAWER CUSTOMIZADO --- */
+
+.btn-close-drawer {
+  box-shadow: none!important;
+}
+#tech-drawer, #mic-drawer {
+    -moz-transform: translateX(-120%);
+    -webkit-transform: translateX(-120%);
+    -ms-transform: translateX(-120%);
+     transform: translateX(-120%);
+    -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    -webkit-overflow-scrolling: touch;
+    background: #191B1D; /* Mesma cor do menu */
+    color: #ffffff;
+    height: 100%;
+    max-width: 80%;
+    overflow-y: auto;
+    padding: 3em 2em;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 50%;
+    z-index: 20003;
+    display: flex;
+    flex-direction: column;
+}
+
+#tech-drawer.show, #mic-drawer.show {
+  -moz-transform: translateX(0em);
+  -webkit-transform: translateX(0em);
+  -ms-transform: translateX(0em);
+  transform: translateX(0em);
+  -moz-transition: -moz-transform 0.5s ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -ms-transition: -ms-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  -webkit-overflow-scrolling: touch;
+}
+
+#tech-drawer .close, #mic-drawer .close {
+    background-image: url('images/close.svg'); /* Usa o mesmo ícone do menu */
+    background-position: 4.85em 1em;
+    background-repeat: no-repeat;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    height: 3em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    vertical-align: middle;
+    width: 7em;
+    z-index: 2;
+}
+
+#tech-drawer .drawer-content-wrapper, #mic-drawer .drawer-content-wrapper {
+    width: 100%;
+    padding-top: 2em;
+}
+
+#tech-drawer .drawer-body, #mic-drawer .drawer-body {
+    margin-top: 1em;
+    color: #CDCECF;
+}
+
+#tech-drawer .drawer-item h3, #mic-drawer .drawer-item h3 {
+    color: #e48523; /* Cor da marca */
+    margin-bottom: 1em;
+}
+
+#tech-drawer .drawer-item ul, #mic-drawer .drawer-item ul {
+    list-style: disc;
+    padding-left: 1em;
+    margin-bottom: 1.5em;
+}
+
+/* Estado Aberto */
+body.is-drawer-visible #tech-drawer, body.is-drawer-visible #mic-drawer {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+body.is-drawer-visible #page-wrapper {
+    opacity: 0.35; /* Mesmo efeito do menu */
+}
+
+body.is-drawer-visible #page-wrapper:before {
+    display: block; /* Overlay escuro */
+}
+
+/* Mobile Adjustments (Breakpoint 736px do Spectral) */
+@media screen and (max-width: 736px) {
+    #tech-drawer, #mic-drawer {
+        max-width: 100%;
+        width: 100%;
+        padding: 3em 1.5em;
+        /* Transformar em Bottom Sheet no mobile */
+        -moz-transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+        top: auto;
+        bottom: 0;
+        height: 90vh;
+        border-radius: 20px 20px 0 0;
+    }
+
+    body.is-drawer-visible #tech-drawer, body.is-drawer-visible #mic-drawer  {
+        -moz-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+    
+    #tech-drawer .close, #mic-drawer .close {
+        background-position: 90% 1em;
+    }
+}
+
+
+/* ===== BLOQUEIO DE SCROLL NA PÁGINA QUANDO DRAWER ESTIVER ABERTO ===== */
+body.is-drawer-visible {
+  overflow: hidden !important;
+  /* position: fixed; */
+  width: 100%;
+  height: 100%;
+}
+
+/* Mantém o scroll APENAS dentro do drawer */
+#tech-drawer.show,
+#mic-drawer.show {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch; /* Suaviza scroll em iOS */
+}
+
+/* Fecha drawer ao clicar na área de rolagem (overlay) */
+body.is-drawer-visible #page-wrapper:before {
+  cursor: pointer;
 }
