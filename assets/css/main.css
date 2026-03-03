@@ -4418,12 +4418,6 @@ body.is-mobile.landing #footer {
 }
 
 /* Estado Aberto */
-body.is-drawer-visible #tech-drawer, body.is-drawer-visible #mic-drawer {
-    -moz-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-}
 
 body.is-drawer-visible #page-wrapper {
     opacity: 0.35; /* Mesmo efeito do menu */
