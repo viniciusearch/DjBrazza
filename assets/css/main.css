@@ -354,7 +354,7 @@ sup {
 
 hr {
   border: 0;
-  border-bottom: solid 2px #fff;
+  border-bottom: solid 0.8px;
   margin: 3em 0;
 }
 
@@ -4483,5 +4483,10 @@ body.is-drawer-visible #page-wrapper:before {
 .drawer-body ul span {
   font-weight: lighter;
   font-size: 0.9em;
+}
+
+.drawer-body ul div {
+  padding-left: 1em;
+  padding-bottom: 1em;
 }
 
