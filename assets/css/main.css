@@ -4476,3 +4476,12 @@ body.is-drawer-visible {
 body.is-drawer-visible #page-wrapper:before {
   cursor: pointer;
 }
+
+.drawer-body li {
+  font-weight: bold;
+}
+.drawer-body ul span {
+  font-weight: lighter;
+  font-size: 0.9em;
+}
+
