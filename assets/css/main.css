@@ -4418,14 +4418,15 @@ body.is-mobile.landing #footer {
 }
 
 /* Estado Aberto */
+/*
 
 body.is-drawer-visible #page-wrapper {
-    opacity: 0.35; /* Mesmo efeito do menu */
+    opacity: 0.35; 
 }
 
 body.is-drawer-visible #page-wrapper:before {
-    display: block; /* Overlay escuro */
-}
+    display: block; 
+} */
 
 /* Mobile Adjustments (Breakpoint 736px do Spectral) */
 @media screen and (max-width: 736px) {
@@ -4443,13 +4444,13 @@ body.is-drawer-visible #page-wrapper:before {
         height: 90vh;
         border-radius: 20px 20px 0 0;
     }
-
+    /*
     body.is-drawer-visible #tech-drawer, body.is-drawer-visible #mic-drawer  {
         -moz-transform: translateY(0);
         -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
         transform: translateY(0);
-    }
+    } */
     
     #tech-drawer .close, #mic-drawer .close {
         background-position: 90% 1em;
