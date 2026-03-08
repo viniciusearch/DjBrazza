@@ -2681,10 +2681,13 @@ button:disabled,
 
 .features li {
   padding: 4em 4em 2em 6em;
-  display: block;
   position: relative;
   text-align: left;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
 .features li:nth-child(1) {
@@ -4338,12 +4341,17 @@ body.is-mobile.landing #footer {
 }
 
 
-/* --- TECH DRAWER CUSTOMIZADO --- */
+/* --- SAIBA MAIS DRAWER --- */
 
 .btn-close-drawer {
   box-shadow: none!important;
 }
-#tech-drawer, #mic-drawer {
+
+#tech-drawer,
+#mic-drawer,
+#luz-drawer,
+#xp-drawer,
+#play-drawer {
     -moz-transform: translateX(-120%);
     -webkit-transform: translateX(-120%);
     -ms-transform: translateX(-120%);
@@ -4368,7 +4376,11 @@ body.is-mobile.landing #footer {
     flex-direction: column;
 }
 
-#tech-drawer.show, #mic-drawer.show {
+#tech-drawer.show,
+#mic-drawer.show,
+#luz-drawer.show,
+#xp-drawer.show,
+#play-drawer.show {
   -moz-transform: translateX(0em);
   -webkit-transform: translateX(0em);
   -ms-transform: translateX(0em);
@@ -4380,7 +4392,11 @@ body.is-mobile.landing #footer {
   -webkit-overflow-scrolling: touch;
 }
 
-#tech-drawer .close, #mic-drawer .close {
+#tech-drawer .close,
+#mic-drawer .close,
+#luz-drawer .close,
+#xp-drawer .close,
+#play-drawer .close {
     background-image: url('images/close.svg'); /* Usa o mesmo ícone do menu */
     background-position: 4.85em 1em;
     background-repeat: no-repeat;
@@ -4396,41 +4412,50 @@ body.is-mobile.landing #footer {
     z-index: 2;
 }
 
-#tech-drawer .drawer-content-wrapper, #mic-drawer .drawer-content-wrapper {
+#tech-drawer .drawer-content-wrapper,
+#mic-drawer .drawer-content-wrapper,
+#luz-drawer .drawer-content-wrapper,
+#xp-drawer .drawer-content-wrapper,
+#play-drawer .drawer-content-wrapper {
     width: 100%;
     padding-top: 2em;
 }
 
-#tech-drawer .drawer-body, #mic-drawer .drawer-body {
+#tech-drawer .drawer-body,
+#mic-drawer .drawer-body,
+#luz-drawer .drawer-body,
+#xp-drawer .drawer-body,
+#play-drawer .drawer-body {
     margin-top: 1em;
     color: #CDCECF;
 }
 
-#tech-drawer .drawer-item h3, #mic-drawer .drawer-item h3 {
+#tech-drawer .drawer-item h3,
+#mic-drawer .drawer-item h3,
+#luz-drawer .drawer-item h3,
+#play-drawer .drawer-item h3,
+#xp-drawer .drawer-item h3 {
     color: #e48523; /* Cor da marca */
     margin-bottom: 1em;
 }
 
-#tech-drawer .drawer-item ul, #mic-drawer .drawer-item ul {
+#tech-drawer .drawer-item ul,
+#mic-drawer .drawer-item ul,
+#luz-drawer .drawer-item ul,
+#xp-drawer .drawer-item ul,
+#play-drawer .drawer-item ul {
     list-style: disc;
     padding-left: 1em;
     margin-bottom: 1.5em;
 }
 
-/* Estado Aberto */
-/*
-
-body.is-drawer-visible #page-wrapper {
-    opacity: 0.35; 
-}
-
-body.is-drawer-visible #page-wrapper:before {
-    display: block; 
-} */
-
 /* Mobile Adjustments (Breakpoint 736px do Spectral) */
 @media screen and (max-width: 736px) {
-    #tech-drawer, #mic-drawer {
+    #tech-drawer,
+    #mic-drawer,
+    #luz-drawer,
+    #xp-drawer,
+    #play-drawer {
         max-width: 100%;
         width: 100%;
         padding: 3em 1.5em;
@@ -4444,15 +4469,12 @@ body.is-drawer-visible #page-wrapper:before {
         height: 90vh;
         border-radius: 20px 20px 0 0;
     }
-    /*
-    body.is-drawer-visible #tech-drawer, body.is-drawer-visible #mic-drawer  {
-        -moz-transform: translateY(0);
-        -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-        transform: translateY(0);
-    } */
-    
-    #tech-drawer .close, #mic-drawer .close {
+
+    #tech-drawer .close,
+    #mic-drawer .close,
+    #luz-drawer .close,
+    #xp-drawer .close,
+    #play-drawer .close {
         background-position: 90% 1em;
     }
 }
@@ -4468,7 +4490,10 @@ body.is-drawer-visible {
 
 /* Mantém o scroll APENAS dentro do drawer */
 #tech-drawer.show,
-#mic-drawer.show {
+#mic-drawer.show,
+#luz-drawer.show,
+#xp-drawer.show,
+#play-drawer.show {
   overflow-y: auto !important;
   -webkit-overflow-scrolling: touch; /* Suaviza scroll em iOS */
 }

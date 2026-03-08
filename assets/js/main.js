@@ -96,7 +96,7 @@
 // Fecha TODOS os drawers
 // Fecha TODOS os drawers + restaura scroll da página
 function closeAllDrawers() {
-  $('#tech-drawer, #mic-drawer').removeClass('show');
+  $('#tech-drawer, #mic-drawer, #luz-drawer, #xp-drawer, #play-drawer').removeClass('show');
   $('body').removeClass('is-drawer-visible');
   
   // Restaura scroll da página ao fechar
@@ -121,7 +121,7 @@ $(document).on('click', function(e) {
   if (!$('body').hasClass('is-drawer-visible')) return;
   
   // Ignora cliques DENTRO de qualquer drawer
-  if ($(e.target).closest('#tech-drawer, #mic-drawer').length) return;
+  if ($(e.target).closest('#tech-drawer, #mic-drawer, #luz-drawer, #xp-drawer, #play-drawer').length) return;
   
   // Ignora cliques nos botões que ABREM drawers (evita flicker)
   if ($(e.target).closest('.btn-open-drawer').length) return;
