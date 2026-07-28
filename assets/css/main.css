@@ -4516,3 +4516,44 @@ body.is-drawer-visible #page-wrapper:before {
   padding-bottom: 1em;
 }
 
+/* =========================================================
+   NOVO: Estilos para o Vídeo de Fundo na Hero (#banner)
+   ========================================================= */
+#banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* Proporção 16:9 */
+    min-height: 100vh;
+    min-width: 177.77vh; /* Proporção 16:9 */
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Impede que o usuário pause ou interaja com o vídeo */
+    z-index: 0;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade (0.1 a 0.8) conforme a claridade do vídeo */
+    z-index: 1;
+}
+
+#banner .inner,
+#banner .more {
+    position: relative;
+    z-index: 2; /* Garante que o texto e botões fiquem acima do vídeo e do overlay */
+}
+
+/* =========================================================
+   MODIFICAÇÃO: Isolar a imagem de fundo APENAS no final do site
+   ========================================================= */
+
