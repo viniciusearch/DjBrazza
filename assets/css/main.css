@@ -4552,8 +4552,50 @@ body.is-drawer-visible #page-wrapper:before {
     position: relative;
     z-index: 2; /* Garante que o texto e botões fiquem acima do vídeo e do overlay */
 }
-
 /* =========================================================
-   MODIFICAÇÃO: Isolar a imagem de fundo APENAS no final do site
+   CORREÇÃO MOBILE: Ajuste de proporção do vídeo de fundo
    ========================================================= */
+@media screen and (max-width: 736px) {
+    /* 1. Remove a forçada de 16:9 que causava o corte excessivo */
+    .banner-video {
+        width: 100vw;
+        height: 100vh;
+        min-width: 100vw;
+        min-height: 100vh;
+        /* Mantém o centralizado para que o corte (se houver) seja simétrico */
+        transform: translate(-50%, -50%);
+    }
 
+    /* 2. Garante que o container #banner ocupe a viewport inteira no mobile */
+    #banner {
+        height: 33vh;
+        /* min-height: 100vh; */
+        /* Ajuste o padding para não empurrar o conteúdo para fora da área visível do vídeo */
+        padding: 0 1.5em; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* 3. Garante que o texto e botões fiquem perfeitamente centralizados e legíveis */
+    #banner .inner {
+        width: 100%;
+        padding: 0;
+        z-index: 2;
+    }
+
+    #banner h2 {
+        font-size: 1.5em; /* Ajuste de tamanho para melhor leitura no mobile */
+        padding: 0.25em 0.5em;
+    }
+
+    #banner p {
+        font-size: 0.9em;
+        margin-bottom: 1.5em;
+    }
+
+    /* 4. Ajusta o botão "Saiba mais" inferior para não conflitar com a rolagem */
+    #banner .more {
+        display: none; /* Opcional: em mobile, o gesto de scroll é natural, a seta pode ser redundante */
+    }
+}
